@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocktail Recipe Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animation.css">
 </head>
 <body>
+    <a href="https://www.google.com/" target="_blank" id="logo-link">
+        <img src="logo.png" alt="Logo" id="logo">
+    </a>
+    
     <div class="container">
         <div class="content">
-            <h1 id="cocktail-name"></h1>
-            <p id="recipe"></p>
-            <p id="preparation"></p>
-            <button id="generate">Generate new</button>
+            <div id="text" class="animated">
+                <h1 id="cocktail-name"></h1>
+                <p id="recipe"></p>
+                <p id="preparation"></p>
+            </div>
+            
+            <button id="generate">
+                Generate new
+                <div class="spinner"></div>
+            </button>
+            
             <div id="loading" class="hidden">Loading...</div>
         </div>
     </div>
+    <script src="cocktails.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

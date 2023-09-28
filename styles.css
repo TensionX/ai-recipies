@@ -1,28 +1,56 @@
-body {
+
+
+html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+
     background-color: navy;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .container {
-    text-align: center;
+    width: 100%; /* Take the full width of its parent */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the block horizontally */
+    padding: 0 60px; /* Add padding on small screens */
+    text-align: left; /* Left-align the text */
+    position: relative; /* Keep this for the button positioning */
+    height: 100%; /* Ensure it takes the full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+}
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px; /* Increase padding on larger screens */
+    }
 }
 
 button {
     background-color: #FF6347; /* Tomato color */
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increased padding for bigger button */
+    font-size: 1.2em; /* Increased font size for bigger text */
     color: white;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    position: absolute; /* Absolute positioning */
+    bottom: 50px; /* 20px from the bottom */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust for true centering */
+
+    white-space: nowrap; /* Prevent wrapping of content */
+    display: inline-flex; /* Use flex to align items in the center */
+    align-items: center; /* Vertically center the text and spinner */
+    justify-content: center; /* Horizontally center the content */
 }
+
 
 button:hover {
     background-color: #FF4500; /* Orangered color */
@@ -31,3 +59,23 @@ button:hover {
 .hidden {
     display: none;
 }
+
+#logo-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%; /* Makes the logo round, assuming it's a square image */
+    overflow: hidden; /* Ensures the image doesn't overflow the rounded border */
+    width: 70px; /* Adjust as needed */
+    height: 70px; /* Adjust as needed */
+    display: block;
+    z-index: 10;
+}
+
+#logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the entire link area */
+}
+
